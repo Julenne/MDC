@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Máximo Divisor Comum</title>
+        <script type="text/javascript">  
+            //JAVASCRIPT  
+                function calc_mdc(){
+                    
+                    var a = parseInt(document.getElementById("a").value,10);
+                    var b = parseInt(document.getElementById("b").value,10);
+                    
+                    var resto; 
+                    do{
+                        resto = a%b;
+                        a = b;
+                        b = resto;
+                    }while( resto != 0 );
+    
+                    document.getElementById("resultado").innerHTML = String(a);
+                }
+        </script>
+        <style>
+            body{
+                background-color: seagreen;
+                text-align: center;
+                font-family: Georgia, 'Times New Roman', Times, serif;
+            }
+            input{
+                background-color: lightgreen;
+                border-radius: 4px;
+                box-shadow: 2px 2px 2px rgb(57, 65, 57);
+                border:1px solid;
+                width: 60px;
+                height: 20px;
+            }
+            button{
+                background-color: lightgreen;
+                border-radius: 4px;
+                box-shadow: 2px 2px 2px rgb(57, 65, 57);
+                border: 4px;
+                width: 75px;
+                height: 30px;
+            }
+            .p1{
+                position: absolute;
+                top: 150px;
+                left: 460px;
+            }
+            .p2{
+                position: absolute;
+                top: 180px;
+                left: 525px;
+            }
+            /*
+            img{
+                position: relative;
+            }
+            */
+        </style>
+    </head>
+    <body>
+        <img src="quadro.png">
+        <h2 class="p1">
+            MDC - Máximo Divisor Comum
+        </h2>
+        <h2 class="p2">
+            A:<input type="number" id="a">
+            B:<input type="number" id="b">
+            <button onclick="calc_mdc()">Calcular</button>
+            <p>
+                Divisor Comum:<span id="resultado" style="color:red"></span>
+            </p> 
+        </h2>
+        
+    </body>
+</html>
